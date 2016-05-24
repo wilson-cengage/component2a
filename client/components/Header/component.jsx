@@ -7,6 +7,6 @@ export default class Header extends React.Component {
 
     render() {
         const value = _.take(['2a', 2, 3])[0];
-        return (<span className="header">Component {value}  - content</span>);
+        return (<span className="header">Component {value}  - cas-4ltr</span>);
     }
 }
