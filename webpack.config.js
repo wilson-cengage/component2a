@@ -8,12 +8,14 @@ module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
   context: path.join(__dirname, './client'),
   entry: {
-    index: './index.js',
-    exports: './exports.js'
+    'index': './index.js',
+    'component2a/component2a': './exports.js'
   },
   output: {
-    path: path.join(__dirname, './static'),
-    filename: '[name].bundle.js',
+    path: path.join(__dirname, './static/'),
+    publicPath: '/static/',   /* for bundle chunk lookup during runtime, should eventually be CMP /components/component2a/ */
+    filename: '[name].js',
+    chunkFilename: 'component2a/component2a-[id].js',
     libraryTarget: 'umd'
   },
   externals: {
